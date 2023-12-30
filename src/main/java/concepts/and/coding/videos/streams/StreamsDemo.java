@@ -1,4 +1,4 @@
-package concepts.and.coding.videos;
+package concepts.and.coding.videos.streams;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

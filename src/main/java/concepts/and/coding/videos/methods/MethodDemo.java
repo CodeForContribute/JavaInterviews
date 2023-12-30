@@ -1,4 +1,4 @@
-package concepts.and.coding.videos;
+package concepts.and.coding.videos.methods;
 
 public class MethodDemo {
     public int sum(int a, int b){
