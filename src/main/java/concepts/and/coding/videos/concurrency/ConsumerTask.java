@@ -1,6 +1,6 @@
 package concepts.and.coding.videos.concurrency;
 
-public class ConsumerTask implements Runnable{
+public class ConsumerTask implements Runnable {
     SharedResource sharedResource;
 
     public ConsumerTask(SharedResource sharedResource) {

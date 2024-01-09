@@ -1,6 +1,6 @@
 package concepts.and.coding.videos.concurrency;
 
-public class ProducerTask implements Runnable{
+public class ProducerTask implements Runnable {
     SharedResource sharedResource;
 
     public ProducerTask(SharedResource sharedResource) {
@@ -12,7 +12,7 @@ public class ProducerTask implements Runnable{
         System.out.println("Producer thread: " + Thread.currentThread().getName());
         try {
             Thread.sleep(2000);
-        }catch (Exception e){
+        } catch (Exception e) {
             // some exception handing here
         }
         // add item is a synchronized method, so any one thread will go inside it

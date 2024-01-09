@@ -12,8 +12,8 @@ public class CommonQueueDataBuffer {
         this.bufferSize = bufferSize;
     }
 
-    public synchronized  void produce(int item) throws  Exception{
-        while (sharedBuffer.size() == bufferSize){
+    public synchronized void produce(int item) throws Exception {
+        while (sharedBuffer.size() == bufferSize) {
             System.out.println("Buffer is full, producer waiting for consumer to consume data");
             wait();
         }
@@ -22,13 +22,14 @@ public class CommonQueueDataBuffer {
         // notify the consumer that there are items to be consumed
         notify();
     }
-    public synchronized int consume() throws Exception{
-        while (sharedBuffer.isEmpty()){
+
+    public synchronized int consume() throws Exception {
+        while (sharedBuffer.isEmpty()) {
             System.out.println("Buffer is empty,consumer is waiting for producer");
             wait();
         }
         int item = sharedBuffer.poll();
-        System.out.println("Consumed: "+ item);
+        System.out.println("Consumed: " + item);
         notify();
         return item;
     }
