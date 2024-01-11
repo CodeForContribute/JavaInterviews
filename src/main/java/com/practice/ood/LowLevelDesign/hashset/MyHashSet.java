@@ -124,8 +124,8 @@ public class MyHashSet {
      In case of hashset or hashmap design we need to address following 2 things.
         1. hash function
         2. collision handling
-        To handle collion handling, we have following 3 ways.
-        Seperate chaining - for values with the same hash key, we keep them in a bucket, and each bucket is independent of each other.
+        To handle collision handling, we have following 3 ways.
+        Separate chaining - for values with the same hash key, we keep them in a bucket, and each bucket is independent of each other.
         open addressing - whenever there is a collision, we keep on probing on the main space with certain strategy
         until a free slot is found.
         2-choice hashing - using 2 hash functions for generating the hash functions and will use the one having fewer collisions.

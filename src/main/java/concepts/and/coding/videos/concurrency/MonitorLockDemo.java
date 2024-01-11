@@ -8,9 +8,9 @@ public class MonitorLockDemo {
      * */
     public static void main(String[] args) {
         MonitorLockExample obj = new MonitorLockExample();
-        Thread a = new Thread(() -> obj.task1());
-        Thread b = new Thread(() -> obj.task2());
-        Thread c = new Thread(() -> obj.task3());
+        Thread a = new Thread(obj::task1);
+        Thread b = new Thread(obj::task2);
+        Thread c = new Thread(obj::task3);
         b.start();
         a.start();
         c.start();
