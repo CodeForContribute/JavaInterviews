@@ -58,7 +58,7 @@ public class DecoratorClientDemo {
     * 1. Nested decoration of a base object
     * e.g, Pizza , coffee -
     * Need - to avoid class explosion
-    * as for different toppings/features,
+    * as for different toppings/features, if we extend the base class, there will be lot of classes - class explosions
     * in normal case we have to extend the base class and create the classes/objects
     * which will lead to huge class also named as class explosions.
     * */

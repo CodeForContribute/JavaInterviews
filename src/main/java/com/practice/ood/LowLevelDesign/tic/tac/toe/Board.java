@@ -3,8 +3,8 @@ package com.practice.ood.LowLevelDesign.tic.tac.toe;
 import java.util.ArrayList;
 import java.util.List;
 public class Board {
-    private int size;
-    private PlayingPiece[][] board;//board has pieces
+    private final int size;
+    private final PlayingPiece[][] board;//board has pieces
 
     public Board(int size) {
         this.size = size;

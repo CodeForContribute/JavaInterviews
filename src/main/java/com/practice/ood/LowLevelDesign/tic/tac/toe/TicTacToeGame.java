@@ -44,8 +44,7 @@ public class TicTacToeGame {
             String[]values = s.split(",");
             int row = Integer.parseInt(values[0]),col = Integer.parseInt(values[1]);
             // place the piece if there is a place is valid and the board has free spaces
-            boolean pieceAddedSuccessfully =
-                    gameBoard.addPiece(row,col,playerTurn.playingPiece);
+            boolean pieceAddedSuccessfully = gameBoard.addPiece(row,col,playerTurn.playingPiece);
             if (!pieceAddedSuccessfully){
                 // player can not insert the piece into this cell, player has to choose another cell
                 System.out.println("Incorrect position chosen, try again");

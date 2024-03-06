@@ -1,5 +1,3 @@
-package design.patterns.abstractFactory;
-
 interface Car{
     public int topSpeed();
 }
@@ -46,10 +44,6 @@ class LuxuryCarFactory implements AbstractFactory{
         return null;
     }
 }
-
-class EconomyCarFactory{
-
-}
 class LuxuryCar1 implements Car{
     @Override
     public int topSpeed() {
@@ -76,13 +70,6 @@ class EconomicCar2 implements Car{
         return 50;
     }
 }
-
-class EconomicCar3 implements Car{
-    @Override
-    public int topSpeed() {
-        return 60;
-    }
-}
 public class AbstractFactoryClientDemo {
     /*
     * It is a factory of a factory
@@ -93,5 +80,8 @@ public class AbstractFactoryClientDemo {
         LuxuryCarFactory luxuryCarFactory = (LuxuryCarFactory) abstractFactoryProducer.getFactoryInstance(FactoryType.LUXURY);
         Car economicCar = economicCarFactory.getInstance(10000);
         Car luxaryCar = luxuryCarFactory.getInstance(30000);
+        System.out.println(economicCar.topSpeed());
+        System.out.println(luxaryCar.topSpeed());
+
     }
 }

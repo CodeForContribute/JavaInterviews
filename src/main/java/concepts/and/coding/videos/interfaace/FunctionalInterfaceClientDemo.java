@@ -53,7 +53,7 @@ interface LivingThing{
     public static boolean canBreatheInWater(){
         return false;
     }
-    String toString();
+    String toString(); // method from Object class
 }
 
 @FunctionalInterface
@@ -112,9 +112,12 @@ public class FunctionalInterfaceClientDemo {
         Consumer<Integer>consumer = (Integer val)->{
             if (val > 10){
                 System.out.println("Logging !!!!");
+            }else{
+                System.out.println("Not Logging !!!!!!!!!");
             }
         };
-
+        consumer.accept(12);
+        consumer.accept(10);
         // demo of producer functional interface
         Supplier<String>isEvenNumber = ()->"this is the data returned";
         System.out.println(isEvenNumber.get());

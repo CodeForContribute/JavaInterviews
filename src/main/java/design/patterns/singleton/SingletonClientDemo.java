@@ -1,8 +1,7 @@
 package design.patterns.singleton;
 
 class DBConnectionUsingEager{
-    private static final DBConnectionUsingEager dbConnectionObject
-            = new DBConnectionUsingEager();
+    private static final DBConnectionUsingEager dbConnectionObject = new DBConnectionUsingEager();
     private DBConnectionUsingEager(){}
     public static DBConnectionUsingEager getInstance(){
         return dbConnectionObject;
@@ -65,10 +64,13 @@ public class SingletonClientDemo {
     public static void main(String[] args) {
         DBConnectionUsingEager dbConnectionUsingEager =
                 DBConnectionUsingEager.getInstance();
+
         DBConnectionUsingLazy dbConnectionUsingLazy =
                 DBConnectionUsingLazy.getInstance();
+
         DBConnectionUsingSynchronized dbConnectionUsingSynchronized =
                 DBConnectionUsingSynchronized.getInstance();
+
         DBConnectionUsingDoubleLocking dbConnectionUsingDoubleLocking = DBConnectionUsingDoubleLocking
                  .getInstance();
     }

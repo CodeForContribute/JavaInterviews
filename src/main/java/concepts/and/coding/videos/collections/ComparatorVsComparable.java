@@ -75,15 +75,15 @@ public class ComparatorVsComparable {
         //Arrays.sort(cars,(Car a, Car b)->a.getCarType().compareTo(b.getCarType()));
         //Arrays.stream(cars).forEach(car -> System.out.println(car.getCarType()));
         //Arrays.sort(cars,(Car a, Car b)->b.getCarName().compareTo(a.getCarName()));
-        Collections.sort(Arrays.asList(cars),(Car a, Car b)->b.getCarName().compareTo(a.getCarName()));
+        Arrays.sort(cars, (Car a, Car b) -> b.getCarName().compareTo(a.getCarName()));
         //Arrays.stream(cars).forEach(car -> System.out.println(car.getCarName()));
-        // Alternatively we can create individual comparator class and implments comparator interface
+        // Alternatively we can create individual comparator class and implements comparator interface
         // and pass to the function arg
         List<Car>carList = new ArrayList<>();
         carList.add(new Car("SUV","Petrol"));
         carList.add(new Car("Sedan","Diesel"));
         carList.add(new Car("HatchBack","CNG"));
-        Collections.sort(carList,new CarNameComparator());
+        carList.sort(new CarNameComparator());
         carList.forEach(car -> System.out.println(car.getCarName()));
         carList.sort(new CarTypeComparator());
         carList.forEach(car -> System.out.println(car.getCarType()));

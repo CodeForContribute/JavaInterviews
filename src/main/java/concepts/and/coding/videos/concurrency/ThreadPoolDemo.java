@@ -83,7 +83,7 @@ public class ThreadPoolDemo {
                 new CustomRejectionHandler()
         );
         poolExecutor.allowCoreThreadTimeOut(true);
-        // create tasks and submit tasks
+         //create tasks and submit tasks
         for(int i = 0; i < 24;++i){
             poolExecutor.submit( ()->{
                 try {
@@ -95,5 +95,32 @@ public class ThreadPoolDemo {
             });
         }
         poolExecutor.shutdown();
+
+        ThreadPoolExecutor fixedThreadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+        for(int i = 0; i < 24;++i){
+            fixedThreadPoolExecutor.submit( ()->{
+                try {
+                    Thread.sleep(5000);
+                    System.out.println("Thread name : " + Thread.currentThread().getName());
+                }catch (Exception e){
+                    // some exception handling here
+                }
+            });
+        }
+        fixedThreadPoolExecutor.shutdown();
+
+        ThreadPoolExecutor cachedThreadPoolExecutor =
+                (ThreadPoolExecutor) Executors.newCachedThreadPool();
+        for(int i = 0; i < 24;++i){
+            cachedThreadPoolExecutor.submit( ()->{
+                try {
+                    Thread.sleep(5000);
+                    System.out.println("Thread name : " + Thread.currentThread().getName());
+                }catch (Exception e){
+                    // some exception handling here
+                }
+            });
+        }
+        cachedThreadPoolExecutor.shutdown();
     }
 }
