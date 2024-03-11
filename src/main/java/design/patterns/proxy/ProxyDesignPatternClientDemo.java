@@ -79,6 +79,15 @@ class EmployeeDaoImpl implements EmployeeDao {
 }
 
 public class ProxyDesignPatternClientDemo {
+    /*
+    * Use case
+    * 1. User restriction - if the user request is not allowed
+    * 2. Caching - cache the result of repetitive user request to real object
+    * 3. Preprocessing & Post processing after user request sent to real object.
+    * 4. Centralised logging of request - before and after sending user request to backend service.
+    * 5. Marshalling and unmarshalling
+    *
+    * */
     public static void main(String[] args) {
         try {
             EmployeeDao employeeDaoImpl = new EmployeeDaoImpl();
