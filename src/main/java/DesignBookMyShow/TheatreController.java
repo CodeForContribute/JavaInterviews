@@ -28,18 +28,18 @@ public class TheatreController {
         List<Theatre> theatres = this.cityVsTheatre.getOrDefault(city, new ArrayList<>());
         // theatre has screen, screen has seats,also it has list of show in it.
         // show has movie associated with it
-        theatres.stream().forEach(theatre -> {
-            List<Show> givenMovieShows = new ArrayList<>();
-            List<Show> showList = theatre.getShows();
-            showList.stream().forEach(show -> {
-                if (show.getMovie().getMovieId() == movie.getMovieId()) {
-                    givenMovieShows.add(show);
-                }
-            });
-            if (!givenMovieShows.isEmpty()) {
-                allRunningShowInAllTheatres.put(theatre, givenMovieShows);
-            }
-        });
+       for (Theatre theatre:theatres){
+           List<Show> givenMovieShows = new ArrayList<>();
+           List<Show> showList = theatre.getShows();
+           showList.stream().forEach(show -> {
+               if (show.getMovie().getMovieId() == movie.getMovieId()) {
+                   givenMovieShows.add(show);
+               }
+           });
+           if (!givenMovieShows.isEmpty()) {
+               allRunningShowInAllTheatres.put(theatre, givenMovieShows);
+           }
+       }
         return allRunningShowInAllTheatres;
     }
 }

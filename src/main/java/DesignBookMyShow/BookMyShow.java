@@ -97,6 +97,7 @@ public class BookMyShow {
     public void createTheatres() {
         Movie avengerMovie = this.movieController.getMovieByName("AVENGERS");
         Movie bahubaliMovie = this.movieController.getMovieByName("BAHUBALI");
+
         Theatre inox = new Theatre();
         inox.setTheatreId(1);
         inox.setScreens(createScreens());
