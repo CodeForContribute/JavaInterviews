@@ -1,13 +1,21 @@
 package DesignBookMyShow;
 
-public class Payment {
-    private int  paymentId;
+import DesignWareHouseManagement.PaymentMode;
 
-    public int getPaymentId() {
-        return paymentId;
+public class Payment {
+    private PaymentMode paymentMode;
+    public Payment(PaymentMode paymentMode){
+        this.paymentMode = paymentMode;
+    }
+    public boolean makePayment(){
+        return this.paymentMode.makePayment();
     }
 
-    public void setPaymentId(int paymentId) {
-        this.paymentId = paymentId;
+    public PaymentMode getPaymentMode() {
+        return paymentMode;
+    }
+
+    public void setPaymentMode(PaymentMode paymentMode) {
+        this.paymentMode = paymentMode;
     }
 }
