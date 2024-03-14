@@ -8,7 +8,6 @@ public interface State {
     public void chooseProduct(VendingMachine machine, int productCode) throws Exception;
     public int getChange(int returnChangeMoney) throws Exception;
     public Item dispenseProduct(VendingMachine machine, int productCode) throws Exception;
-
     public List<Coin>refundFullMoney(VendingMachine machine) throws Exception;
     public void updateInventory(VendingMachine machine, Item item, int productCode) throws Exception;
 }
